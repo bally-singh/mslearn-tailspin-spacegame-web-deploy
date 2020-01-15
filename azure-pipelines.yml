@@ -15,7 +15,6 @@ stages:
     variables:
       wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
       dotnetSdkVersion: '2.1.505'
-      Subscription: 'Visual Studio Enterprise – wiscombe.net (0b738348-cc56-4b5e-8700-a0aaf1ffe29e)'
 
     steps:
     - task: DotNetCoreInstaller@0
@@ -82,6 +81,6 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure App Service Deploy: website'
             inputs:
-              azureSubscription: '$(Subscription)'
+              azureSubscription: 'Visual Studio Enterprise – wiscombe.net (0b738348-cc56-4b5e-8700-a0aaf1ffe29e)'
               appName: '$(WebAppName)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
